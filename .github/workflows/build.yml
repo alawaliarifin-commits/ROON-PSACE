@@ -21,8 +21,9 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v2
 
-    - name: Build with Gradle
-      run: |
-        echo "Pabrik siap merakit!"
-        # Nanti kita lengkapi struktur project Android-nya di sini
-        
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
+    - name: Build APK with Gradle
+      run: ./gradlew assembleDebug
+    
